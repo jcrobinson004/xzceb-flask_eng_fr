@@ -11,22 +11,22 @@ url = os.environ['url']
 
 authenticator = IAMAuthenticator('{apikey}')
 language_translator = LanguageTranslatorV3
-    version='{version}',
-    authenticator=authenticator
-
+version ='{version}',
+authenticator = authenticator
 language_translator.set_service_url('{url}')
 
 def englishToFrench(englishText):
     
     for text in englishText:
-        frenchText = language_translator.translate(text: [englishText], model_id= 'en-fr')
+       
+        frenchText = language_translator.translate(text:[englishText], modelid='en-fr')
     
      return frenchText
 
 def frenchToEnglish(frenchText):
-      curl -X POST --user "apikey:{apikey}" \
-    --header "Content-Type: application/json" \
-    --data '{"text": 'englishText' , "model_id":"en-fr"}' \
-"{url}/v3/translate?version=2018-05-01"
+    
+    for text in frenchText:
+        
+        englishText = language_translator.translate(text: [frenchText], modelid= 'fr-en')
     
     return englishText
