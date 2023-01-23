@@ -9,6 +9,6 @@ class TestTranslator(unittest.TestCase):
 
     def test_frenchToEnglish(self):
         self.assertIsNotNone(self)
-        self.assertEqual('Bonjour','Hello')
+        self.assertEqual(frenchToEnglish('Bonjour'),'Hello')
 
 unittest.main()

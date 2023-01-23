@@ -26,13 +26,15 @@ language_translator.set_service_url(url)
 def englishToFrench(englishText):
         
     frenchText = language_translator.translate(
-       text=englishText,
-       model_id='en-fr').get_result()
+        text=englishText,
+        model_id='en-fr').get_result()
     
     return (json.dumps(frenchText,indent=2))
 
 def frenchToEnglish(frenchText):
     
-    englishText = language_translator.translate( frenchText, modelid= 'fr-en')
+    englishText = language_translator.translate(
+        text= frenchText,
+        model_id='fr-en').get_result()
     
-    return englishText
+    return (json.dumps(englishText,indent=2)) 
