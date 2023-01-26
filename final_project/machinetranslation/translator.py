@@ -25,16 +25,21 @@ language_translator.set_service_url(url)
 
 def __english_to_french__(english_text):
 
-    french_text = language_translator.translate(
+    translation = language_translator.translate(
         text=english_text,
         model_id='en-fr').get_result()
+    json.dumps(translation)
+    list=translation['translations']
+    french_text=list
 
     return french_text
 
 def __french_to_english__(french_text):
 
-    english_text = language_translator.translate(
-        text= french_text,
+    translation = language_translator.translate(
+        text=french_text,
         model_id='fr-en').get_result()
-
+    json.dumps(translation)
+    list=translation['translations'] 
+    english_text=list 
     return english_text
